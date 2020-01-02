@@ -20,6 +20,10 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <Header />
+        <Aside />
+        <div className="main-container">
+          <Main />
+        </div>
       </div>
     )
   }
