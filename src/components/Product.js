@@ -3,16 +3,32 @@
 // =============================
 // Packages
 import React from 'react';
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 // =============================
 // COMPONENT CLASS
 // =============================
 class Product extends React.Component {
     render () {
+
+        
+
         return (
-            <div>
-                This is the product page
-            </div>
+                <Card border="" style={{width: '18rem'}}>
+                    <Card.Body>
+                        <Card.Title>{this.props.productData.name}</Card.Title>
+                        <Card.Text>
+                            Price: ${this.props.productData.price}
+                        </Card.Text>
+                    </Card.Body>
+                    <ListGroup className="list-group-flush">
+                        <ListGroup.Item>Store: {this.props.productData.store}</ListGroup.Item>
+                        <ListGroup.Item>Room: {this.props.productData.room}</ListGroup.Item>
+                        <ListGroup.Item>Category: {this.props.productData.category}</ListGroup.Item>
+                        <ListGroup.Item>Bought: {this.props.productData.bought}</ListGroup.Item>
+                    </ListGroup>
+                </Card>
         )
     }
 }
