@@ -62,6 +62,21 @@ class Main extends React.Component {
         }).catch(error => console.log(error))
     }
 
+    updateProduct = (updatedData) => {
+        fetch(`${baseUrl}/products/${updatedData.id}`, {
+            body: JSON.stringify(updatedData),
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-type': 'application/json'
+            }
+        })
+        .then(updatedProduct => {
+            this.props.handleView('homepage')
+            this.fetchProducts()
+        }).catch(error => console.log(error))
+    }
+
     render () {
         return (
             <div>
