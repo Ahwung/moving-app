@@ -50,6 +50,16 @@ class Main extends React.Component {
                 'Content-type': 'application/json'
             }
         })
+        .then(createdProduct => {
+            return createdProduct.json()
+        })
+        .then(jsonedProduct => {
+            this.props.handleView('homepage')
+            this.setState(prevState => {
+                prevState.products = jsonedProduct
+                return {products: prevState.products}
+            })
+        }).catch(error => console.log(error))
     }
 
     render () {
