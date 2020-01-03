@@ -14,7 +14,7 @@ import Main from './components/Main.js'
 import Navigation from './components/Navigation.js'
 
 // =============================
-// COMPONENT CLASS
+// COMPONENT CLASS: APP
 // =============================
 class App extends React.Component {
   constructor(props) {
@@ -87,9 +87,8 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <Header />
-        <Aside />
         <div className="main-container">
-          <Main />
+          <Main view={this.state.view} handleView={this.handleView} formInputs={this.state.formInputs}/>
         </div>
       </div>
     )
