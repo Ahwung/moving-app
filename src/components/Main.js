@@ -92,7 +92,20 @@ class Main extends React.Component {
         }).catch(error => console.log(error))
     }
 
+    // Lifecycle function to pull data to render at page load
+    componentDidMount() {
+        this.fetchProducts()
+    }
+
     render () {
+
+        let currentPage;
+        if(this.props.view.page === 'homepage') {
+            currentPage = this.state.products.map((ProductData) => {
+                
+            })
+        }
+
         return (
             <div>
                 This is the main container

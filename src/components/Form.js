@@ -10,7 +10,9 @@ import React from 'react';
 class Form extends React.Component {
     render () {
         return (
-            s
+            <div>
+                this is the form page
+            </div>
         )
     }
 }
