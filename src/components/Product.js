@@ -12,10 +12,17 @@ import ListGroup from 'react-bootstrap/ListGroup'
 class Product extends React.Component {
     render () {
 
-        
+        let borderColor;
+        if (this.props.productData.bought === "f") {
+            this.props.productData.bought = "false"
+            borderColor = "dark"
+        } else if (this.props.productData.bought === "t") {
+            this.props.productData.bought = "true"
+            borderColor = "primary"
+        }
 
         return (
-                <Card border="" style={{width: '18rem'}}>
+                <Card border={borderColor} style={{width: '18rem'}}>
                     <Card.Body>
                         <Card.Title>{this.props.productData.name}</Card.Title>
                         <Card.Text>
