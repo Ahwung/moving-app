@@ -77,6 +77,21 @@ class Main extends React.Component {
         }).catch(error => console.log(error))
     }
 
+    deleteProduct = (id) => {
+        fetch(`${baseUrl}/products/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-type': 'application/json'
+            }
+        })
+        .then(json => {
+            this.setState({
+                products: this.state.products.filter(product => product.id !== id)
+            })
+        }).catch(error => console.log(error))
+    }
+
     render () {
         return (
             <div>
