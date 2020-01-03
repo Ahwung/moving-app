@@ -41,7 +41,7 @@ class Main extends React.Component {
     }
     
     // Function to create products in API
-    createProduct = (createdData) => {
+    handleCreate = (createdData) => {
         fetch(`${baseUrl}/products`, {
             body: JSON.stringify(createdData),
             method: 'POST',
@@ -62,7 +62,7 @@ class Main extends React.Component {
         }).catch(error => console.log(error))
     }
 
-    updateProduct = (updatedData) => {
+    handleUpdate = (updatedData) => {
         fetch(`${baseUrl}/products/${updatedData.id}`, {
             body: JSON.stringify(updatedData),
             method: 'PUT',
@@ -77,7 +77,7 @@ class Main extends React.Component {
         }).catch(error => console.log(error))
     }
 
-    deleteProduct = (id) => {
+    handleDelete = (id) => {
         fetch(`${baseUrl}/products/${id}`, {
             method: 'DELETE',
             headers: {
@@ -101,14 +101,17 @@ class Main extends React.Component {
 
         let currentPage;
         if(this.props.view.page === 'homepage') {
-            currentPage = this.state.products.map((ProductData) => {
-                
-            })
+            currentPage = this.state.products.map((productData) => (
+                <Product handleView={this.props.handleView} key={productData.id} productData={productData} handleDelete={this.handleDelete} />
+            ))
+        } else if (this.props.view.page === 'addProduct') {
+            currentPage = <Form handleCreate={this.handleCreate} handleUpdate={this.handleUpdate} view={this.props.view} formInputs={this.props.formInputs} />
         }
 
         return (
             <div>
-                This is the main container
+                <h1>{this.props.view.pageTitle}</h1>
+                {currentPage}
             </div>
         )
     }
