@@ -29,7 +29,7 @@ class Product extends React.Component {
                             Price: ${this.props.productData.price}
                         </Card.Text>
                     </Card.Body>
-                    <ListGroup className="list-group-flush">
+                    <ListGroup>
                         <ListGroup.Item>Store: {this.props.productData.store}</ListGroup.Item>
                         <ListGroup.Item>Room: {this.props.productData.room}</ListGroup.Item>
                         <ListGroup.Item>Category: {this.props.productData.category}</ListGroup.Item>

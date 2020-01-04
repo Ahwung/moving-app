@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import Header from './components/Header.js'
-import Aside from './components/Aside.js'
 import Main from './components/Main.js'
 import Navigation from './components/Navigation.js'
 
@@ -87,6 +86,7 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <Header />
+        <Navigation handleView={this.handleView} />
         <div className="main-container">
           <Main view={this.state.view} handleView={this.handleView} formInputs={this.state.formInputs}/>
         </div>
