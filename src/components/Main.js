@@ -13,9 +13,9 @@ import Form from './Form.js'
 // =============================
 let baseUrl = '';
 if (process.env.NODE_ENV === 'development') {
-    baseUrl = 'https://moving-help-api.herokuapp.com'
+    baseUrl = 'http://cors-anywhere.herokuapp.com/https://moving-help-api.herokuapp.com'
 } else {
-    console.log('this is for heroku')
+    baseUrl = 'https://moving-help-api.herokuapp.com'
 }
 
 // =============================
@@ -56,6 +56,7 @@ class Main extends React.Component {
         .then(jsonedProduct => {
             this.props.handleView('homepage')
             this.setState(prevState => {
+                console.log(this.props)
                 prevState.products = jsonedProduct
                 return {products: prevState.products}
             })

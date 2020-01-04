@@ -3,7 +3,8 @@
 // =============================
 // Packages
 import React from 'react';
-import Input from 'react-bootstrap/Form'
+import Input from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 // =============================
 // COMPONENT CLASS
@@ -24,7 +25,7 @@ class Form extends React.Component {
     }
     
     handleChange = (event) => {
-        this.setState({[event.target.id]: event.target.value})
+        this.setState({[event.target.id] : event.target.value})
     }
 
     handleSubmit = (event) => {
@@ -51,7 +52,7 @@ class Form extends React.Component {
 
     render () {
         return (
-            <Input>
+            <Input onSubmit={this.handleSubmit}>
                 <Input.Group>
                     <Input.Label>Name</Input.Label>
                     <Input.Control type="text" placeholder="Name of Product" id="name" value={this.state.name} onChange={this.handleChange} />
@@ -76,12 +77,15 @@ class Form extends React.Component {
                     <Input.Label>Category</Input.Label>
                     <Input.Control type="text" placeholder="Category of Product" id="category" value={this.state.category} onChange={this.handleChange} />
                 </Input.Group>
-                <Input.Group>
+                {/* <Input.Group>
                     <Input.Label>Purchased</Input.Label>
                     <Input.Control as="select" id="bought" value={this.state.bought} onChange={this.handleChange}>
                         <option>False</option>
                         <option>True</option>
                     </Input.Control>
+                </Input.Group> */}
+                <Input.Group className="submit">
+                    <Button className="submitBtn" variant="primary" type="submit" value="submit">Submit</Button>
                 </Input.Group>
             </Input>
         )
