@@ -52,6 +52,37 @@ class Form extends React.Component {
     render () {
         return (
             <Input>
+                <Input.Group>
+                    <Input.Label>Name</Input.Label>
+                    <Input.Control type="text" placeholder="Name of Product" id="name" value={this.state.name} onChange={this.handleChange} />
+                </Input.Group>
+                <Input.Group>
+                    <Input.Label>Price</Input.Label>
+                    <Input.Control type="number" id="price" value={this.state.price} onChange={this.handleChange} />
+                </Input.Group>
+                <Input.Group>
+                    <Input.Label>URL</Input.Label>
+                    <Input.Control type="text" placeholder="Link to Product" id="url" value={this.state.url} onChange={this.handleChange} />
+                </Input.Group>
+                <Input.Group>
+                    <Input.Label>Store</Input.Label>
+                    <Input.Control type="text" placeholder="Store of Product" id="store" value={this.state.store} onChange={this.handleChange} />
+                </Input.Group>
+                <Input.Group>
+                    <Input.Label>Room</Input.Label>
+                    <Input.Control type="text" placeholder="Desired Room" id="room" value={this.state.room} onChange={this.handleChange} />
+                </Input.Group>
+                <Input.Group>
+                    <Input.Label>Category</Input.Label>
+                    <Input.Control type="text" placeholder="Category of Product" id="category" value={this.state.category} onChange={this.handleChange} />
+                </Input.Group>
+                <Input.Group>
+                    <Input.Label>Purchased</Input.Label>
+                    <Input.Control as="select" id="bought" value={this.state.bought} onChange={this.handleChange}>
+                        <option>False</option>
+                        <option>True</option>
+                    </Input.Control>
+                </Input.Group>
             </Input>
         )
     }
