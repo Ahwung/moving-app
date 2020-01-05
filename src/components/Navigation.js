@@ -16,7 +16,7 @@ class Navigation extends React.Component {
                     <Nav.Link eventKey="home" onClick={() => {this.props.handleView('homepage')}}>Home</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                    <Nav.Link eventKey="table">Table</Nav.Link>
+                    <Nav.Link eventKey="table" onClick={() => {this.props.handleView('table')}}>Table</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                     <Nav.Link eventKey="add" onClick={() => {this.props.handleView('addProduct')}}>Add New Product</Nav.Link>

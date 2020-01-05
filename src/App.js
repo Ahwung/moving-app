@@ -53,6 +53,9 @@ class App extends React.Component {
       case 'homepage':
         pageTitle = 'All Products'
         break
+      case 'table':
+        pageTitle = 'Table of Products'
+        break
       case 'addProduct':
         pageTitle = 'Add New Product'
         break

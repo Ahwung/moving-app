@@ -77,13 +77,10 @@ class Form extends React.Component {
                     <Input.Label>Category</Input.Label>
                     <Input.Control type="text" placeholder="Category of Product" id="category" value={this.state.category} onChange={this.handleChange} />
                 </Input.Group>
-                {/* <Input.Group>
+                <Input.Group>
                     <Input.Label>Purchased</Input.Label>
-                    <Input.Control as="select" id="bought" value={this.state.bought} onChange={this.handleChange}>
-                        <option>False</option>
-                        <option>True</option>
-                    </Input.Control>
-                </Input.Group> */}
+                    <Input.Control type="text" placeholder="Bought yet" id="bought" value={this.state.bought} onChange={this.handleChange} />
+                </Input.Group>
                 <Input.Group className="submit">
                     <Button className="submitBtn" variant="primary" type="submit" value="submit">Submit</Button>
                 </Input.Group>

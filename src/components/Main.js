@@ -7,6 +7,7 @@ import React from 'react';
 // Components
 import Product from './Product.js'
 import Form from './Form.js'
+import Grid from './Grid.js'
 
 // =============================
 // LINK TO CONNECT TO API
@@ -56,7 +57,6 @@ class Main extends React.Component {
         .then(jsonedProduct => {
             this.props.handleView('homepage')
             this.setState(prevState => {
-                console.log(this.props)
                 prevState.products = jsonedProduct
                 return {products: prevState.products}
             })
@@ -105,8 +105,12 @@ class Main extends React.Component {
             currentPage = this.state.products.map((productData) => (
                 <Product handleView={this.props.handleView} key={productData.id} productData={productData} handleDelete={this.handleDelete} />
             ))
-        } else if (this.props.view.page === 'addProduct') {
+        } else if (this.props.view.page === 'addProduct' | this.props.view.page === 'editProduct') {
             currentPage = <Form handleCreate={this.handleCreate} handleUpdate={this.handleUpdate} view={this.props.view} formInputs={this.props.formInputs} />
+        } else if (this.props.view.page === 'table') {
+            currentPage = this.state.products.map((productData) => (
+                <Grid handleView={this.props.handleView} key={productData.id} productData={productData} handleDelete={this.handleDelete} />
+            ))
         }
 
         return (

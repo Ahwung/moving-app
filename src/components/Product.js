@@ -12,17 +12,17 @@ import ListGroup from 'react-bootstrap/ListGroup'
 class Product extends React.Component {
     render () {
 
-        let borderColor;
-        if (this.props.productData.bought === "f") {
-            this.props.productData.bought = "false"
-            borderColor = "dark"
-        } else if (this.props.productData.bought === "t") {
-            this.props.productData.bought = "true"
-            borderColor = "primary"
-        }
+        // let borderColor;
+        // if (this.props.productData.bought === "f") {
+        //     this.props.productData.bought = "false"
+        //     borderColor = "dark"
+        // } else if (this.props.productData.bought === "t") {
+        //     this.props.productData.bought = "true"
+        //     borderColor = "primary"
+        // }
 
         return (
-                <Card border={borderColor} style={{width: '18rem'}}>
+                <Card border="dark" style={{width: '18rem'}}>
                     <Card.Body>
                         <Card.Title>{this.props.productData.name}</Card.Title>
                         <Card.Text>
@@ -35,6 +35,10 @@ class Product extends React.Component {
                         <ListGroup.Item>Category: {this.props.productData.category}</ListGroup.Item>
                         <ListGroup.Item>Bought: {this.props.productData.bought}</ListGroup.Item>
                     </ListGroup>
+                    <Card.Body>
+                        <Card.Link onClick={() => {this.props.handleView('editProduct', this.props.productData)}}>Edit Product</Card.Link>
+                        <Card.Link onClick={() => {this.props.handleDelete(this.props.productData.id)}}>Delete Product</Card.Link>
+                    </Card.Body>
                 </Card>
         )
     }
