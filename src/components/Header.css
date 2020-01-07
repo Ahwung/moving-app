@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
+header {
+    display: flex;
+    align-items: flex-end;
+    background-color: lightgray;
+    padding: 1rem;
+}
+
+.title {
+    font-family: Fjalla;
+    margin-right: 1rem;
+}
