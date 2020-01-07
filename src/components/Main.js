@@ -10,6 +10,9 @@ import Form from './Form.js'
 import Grid from './Grid.js'
 import GridHeader from './GridHeader.js'
 
+// CSS
+import './Main.css'
+
 // =============================
 // LINK TO CONNECT TO API
 // =============================
@@ -120,7 +123,7 @@ class Main extends React.Component {
         }
 
         return (
-            <div>
+            <div className="main-container">
                 <h1>{this.props.view.pageTitle}</h1>
                 {tableHeader}
                 {currentPage}

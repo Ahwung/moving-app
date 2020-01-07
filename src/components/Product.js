@@ -22,7 +22,8 @@ class Product extends React.Component {
         // }
 
         return (
-                <Card border="dark" style={{width: '18rem'}}>
+            <div className="product-container">
+                <Card border="dark" style={{width: '18rem'}} className="card">
                     <Card.Body>
                         <Card.Title>{this.props.productData.name}</Card.Title>
                         <Card.Text>
@@ -40,6 +41,7 @@ class Product extends React.Component {
                         <Card.Link onClick={() => {this.props.handleDelete(this.props.productData.id)}}>Delete Product</Card.Link>
                     </Card.Body>
                 </Card>
+            </div>
         )
     }
 }
