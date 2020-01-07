@@ -8,6 +8,7 @@ import React from 'react';
 import Product from './Product.js'
 import Form from './Form.js'
 import Grid from './Grid.js'
+import GridHeader from './GridHeader.js'
 
 // =============================
 // LINK TO CONNECT TO API
@@ -113,9 +114,15 @@ class Main extends React.Component {
             ))
         }
 
+        let tableHeader;
+        if(this.props.view.page === 'table') {
+            tableHeader = <GridHeader />
+        }
+
         return (
             <div>
                 <h1>{this.props.view.pageTitle}</h1>
+                {tableHeader}
                 {currentPage}
             </div>
         )
