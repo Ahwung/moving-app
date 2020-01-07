@@ -105,11 +105,14 @@ class Main extends React.Component {
     render () {
 
         let currentPage;
+        let pageStyle;
         if(this.props.view.page === 'homepage') {
+            pageStyle = "product-page"
             currentPage = this.state.products.map((productData) => (
                 <Product handleView={this.props.handleView} key={productData.id} productData={productData} handleDelete={this.handleDelete} />
             ))
         } else if (this.props.view.page === 'addProduct' | this.props.view.page === 'editProduct') {
+            pageStyle = "form-page"
             currentPage = <Form handleCreate={this.handleCreate} handleUpdate={this.handleUpdate} view={this.props.view} formInputs={this.props.formInputs} />
         } else if (this.props.view.page === 'table') {
             currentPage = this.state.products.map((productData) => (
@@ -123,10 +126,12 @@ class Main extends React.Component {
         }
 
         return (
-            <div className="main-container">
-                <h1>{this.props.view.pageTitle}</h1>
-                {tableHeader}
-                {currentPage}
+            <div>
+            <h1>{this.props.view.pageTitle}</h1>
+                <div className={pageStyle}>
+                    {tableHeader}
+                    {currentPage}
+                </div>
             </div>
         )
     }
