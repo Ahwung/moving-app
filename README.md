@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Moving Help
 
-## Available Scripts
+## Context
 
-In the project directory, you can run:
+This project was created as a final project for my Software Engineering Immersive class at General Assembly. It was created in a weeks worth of time and I plan on developing it further to become useful for anyone using the site.
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In coming up with ideas for my application, I wanted to build something that would not only help me, but also help others as well. For me, I plan on moving to a new residence this year, so I wanted to build something that would help facilitate that and make the process easier since it's already a large ordeal. What I first thought was the cost of new items that would need to be bought for the new place, and that's how this site came to be.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Technologies used
 
-### `npm test`
+Back End
+- PHP
+- PostGres
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Front End
+- React.js
+- React Bootstrap
 
-### `npm run build`
+## Link to live site
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://moving-help.herokuapp.com/
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Link to Back End Database
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://moving-help-api.herokuapp.com/
 
-### `npm run eject`
+## User Stories
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- User can view all products on the home page
+- User can create new products and have it display on the homepage
+- User can edit details on any product
+- User can delete products that aren't needed anymore
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Functionality
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. Create a table view so that it's easy to see all products in the database
+1. Create a sticky footer that keeps track of how much all products will cost
+1. Develop a filtering and sorting method to view certain categories
+1. Create a login system so that each user can have their own site and their own products
