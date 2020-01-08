@@ -24,7 +24,7 @@ https://moving-help.herokuapp.com/
 
 ## Link to Back End Database
 
-https://moving-help-api.herokuapp.com/
+https://moving-help-api.herokuapp.com/products
 
 ## User Stories
 
