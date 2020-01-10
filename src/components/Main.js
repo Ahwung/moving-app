@@ -115,21 +115,13 @@ class Main extends React.Component {
             pageStyle = "form-page"
             currentPage = <Form handleCreate={this.handleCreate} handleUpdate={this.handleUpdate} view={this.props.view} formInputs={this.props.formInputs} />
         } else if (this.props.view.page === 'table') {
-            currentPage = this.state.products.map((productData) => (
-                <Grid handleView={this.props.handleView} key={productData.id} productData={productData} handleDelete={this.handleDelete} />
-            ))
-        }
-
-        let tableHeader;
-        if(this.props.view.page === 'table') {
-            tableHeader = <GridHeader />
+            currentPage = <Grid handleView={this.props.handleView} productData={this.state.products} handleDelete={this.handleDelete} />
         }
 
         return (
             <div>
             <h1>{this.props.view.pageTitle}</h1>
                 <div className={pageStyle}>
-                    {tableHeader}
                     {currentPage}
                 </div>
             </div>
