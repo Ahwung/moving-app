@@ -38,7 +38,9 @@ class Grid extends React.Component {
                                 <td>
                                     <Button variant="link" onClick={() => {this.props.handleView('editProduct', product)}}>Edit</Button>
                                 </td>
-                                <td>Delete</td>
+                                <td>
+                                    <Button variant="link" onClick={() => {this.props.handleDelete(product.id)}}>Delete</Button>
+                                </td>
                             </tr>
                         )
                     })}

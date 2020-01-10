@@ -117,6 +117,8 @@ class Main extends React.Component {
             currentPage = <Grid handleView={this.props.handleView} productData={this.state.products} handleDelete={this.handleDelete} />
         }
 
+        
+        
         return (
             <div>
             <h1>{this.props.view.pageTitle}</h1>
