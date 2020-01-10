@@ -12,6 +12,7 @@ class Grid extends React.Component {
     render () {
 
 
+
         return (
             <Table striped bordered hover responsive>
                 <thead>
@@ -30,7 +31,7 @@ class Grid extends React.Component {
                     {this.props.productData.map(product => {
                         return (
                             <tr key={product.id} className="test">
-                                <td><a href={product.url}>{product.name}</a></td>
+                                <td><a target="_blank" rel="noopener noreferrer" href={product.url}>{product.name}</a></td>
                                 <td>{product.price}</td>
                                 <td>{product.store}</td>
                                 <td>{product.room}</td>

@@ -8,7 +8,6 @@ import React from 'react';
 import Product from './Product.js'
 import Form from './Form.js'
 import Grid from './Grid.js'
-import GridHeader from './GridHeader.js'
 
 // CSS
 import './Main.css'
