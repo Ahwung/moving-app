@@ -29,7 +29,15 @@ class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            products: []
+            products: [],
+            total: []
+        }
+    }
+
+    // Function to push cost into array
+    totalCost = () => {
+        for (let index = 0; index < this.state.products.length; index++) {
+            this.state.total.push(this.state.products[index].price)
         }
     }
 
@@ -41,6 +49,7 @@ class Main extends React.Component {
             this.setState({
                 products: jsonData
             })
+            this.totalCost()
         }).catch(error => console.log(error))
     }
     
@@ -117,8 +126,6 @@ class Main extends React.Component {
             currentPage = <Grid handleView={this.props.handleView} productData={this.state.products} handleDelete={this.handleDelete} />
         }
 
-        
-        
         return (
             <div>
             <h1>{this.props.view.pageTitle}</h1>
