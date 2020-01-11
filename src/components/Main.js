@@ -30,15 +30,23 @@ class Main extends React.Component {
         super(props)
         this.state = {
             products: [],
-            total: []
+            prices: [],
+            total: 0,
         }
     }
 
-    // Function to push cost into array
+    // Function to push prices into array
     totalCost = () => {
+        let addPrices = 0
         for (let index = 0; index < this.state.products.length; index++) {
-            this.state.total.push(this.state.products[index].price)
+            this.state.prices.push(this.state.products[index].price)
         }
+        for (let index = 0; index < this.state.prices.length; index++) {
+            addPrices += this.state.prices[index]
+        }
+        this.setState({
+            total: addPrices
+        })
     }
 
     // Function to fetch product data from API
